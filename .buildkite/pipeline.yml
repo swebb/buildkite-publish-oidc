@@ -1,7 +1,7 @@
 steps:
   - key: "build"
     label: ":hammer_and_wrench: Build"
-    command: rake
+    command: sleep 3600
     artifact_paths: "*.deb"
 
   - label: ":ubuntu: Publish"
