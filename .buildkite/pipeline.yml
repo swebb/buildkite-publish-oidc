@@ -1,7 +1,7 @@
 steps:
   - key: "build"
     label: ":hammer_and_wrench: Build"
-    command: sleep 3600
+    command: "dpkg-deb --build hello-buildkite-1.0"
     artifact_paths: "*.deb"
 
   - label: ":ubuntu: Publish"
