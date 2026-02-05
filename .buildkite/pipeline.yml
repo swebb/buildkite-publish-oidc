@@ -1,8 +1,13 @@
 steps:
+  - key: "clean"
+    label: ":broom: Clean"
+    command: ".buildkite/clean.sh"
+
   - key: "build"
     label: ":hammer_and_wrench: Build"
     command: "dpkg-deb --build hello-buildkite-1.0"
     artifact_paths: "*.deb"
+    depends_on: "clean"
 
   - label: ":ubuntu: Publish"
     depends_on: "build"
